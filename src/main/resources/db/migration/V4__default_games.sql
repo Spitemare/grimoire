@@ -1,0 +1,1 @@
+INSERT INTO GAME (NAME) VALUES ('Magic: the Gathering');

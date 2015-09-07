@@ -44,8 +44,11 @@ public abstract class BaseEntity implements Serializable {
         parts.put("id", id);
         parts.putAll(toStringParts());
 
-        return parts.entrySet().stream().map(e -> e.getKey() + "=" + Objects.toString(e.getValue()))
+        //@formatter:off
+        return parts.entrySet().stream()
+                    .map(e -> e.getKey() + "=" + Objects.toString(e.getValue()))
                 .collect(joining(",", getClass().getSimpleName() + "[", "]"));
+        //@formatter:on
     }
 
     protected Map<String, Object> toStringParts() {

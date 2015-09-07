@@ -1,12 +1,10 @@
 package org.grimoire.model;
 
 import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toMap;
 import static org.grimoire.util.Maps.entry;
-import java.util.Collections;
+import static org.grimoire.util.Maps.unmodifiableMapOf;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Stream;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -54,10 +52,9 @@ public class User extends BaseEntity {
     @Override
     protected Map<String, Object> toStringParts() {
         //@formatter:off
-        return Collections.unmodifiableMap(Stream.of(
+        return unmodifiableMapOf(
                 entry("username", username),
-                entry("roles", roles.stream().map(Role::getRole).collect(joining(", ", "[", "]")))
-        ).collect(toMap(Map.Entry::getKey, Map.Entry::getValue)));
+                entry("roles", roles.stream().map(Role::getRole).collect(joining(", ", "[", "]"))));
         //@formatter:on
     }
 
