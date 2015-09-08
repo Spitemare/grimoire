@@ -20,7 +20,7 @@ public class Card extends BaseEntity {
     @ManyToOne(optional = false)
     private Expansion expansion;
 
-    @OneToMany(mappedBy = "card", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "card", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private List<Stock> stocks;
 
     public String getName() {
