@@ -4,8 +4,8 @@ final class MtgJsonConstants {
 
     private MtgJsonConstants() {}
 
-    public static final String HEADER_CURRENT_VERSION = "MtgJsonCurrentVersion";
+    public static final String HEADER_LOCAL_VERSION = "MtgJsonLocalVersion";
 
-    public static final String HEADER_NEW_VERSION = "MtgJsonNewVersion";
+    public static final String HEADER_REMOTE_VERSION = "MtgJsonRemoteVersion";
 
 }

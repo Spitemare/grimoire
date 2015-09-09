@@ -1,0 +1,10 @@
+{
+	"TEST" : {
+		"name" : "Test Expansion",
+		"cards" : [
+			{
+				"name" : "Test Card"
+			}
+		]
+	}
+}
